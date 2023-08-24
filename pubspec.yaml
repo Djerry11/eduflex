@@ -35,9 +35,12 @@ dependencies:
     sdk: flutter
   flutter_riverpod: ^2.3.7
   intl: ^0.18.1
+  riverpod_annotation: ^2.1.2
 
 dev_dependencies:
   flutter_lints: ^2.0.0
+  riverpod_generator: ^2.2.6
+  build_runner:
   flutter_test:
     sdk: flutter
 

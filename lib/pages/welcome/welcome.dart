@@ -1,10 +1,9 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:eduflex/pages/welcome/boarding_page.dart';
+import 'package:eduflex/pages/welcome/welcome_notifier.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-final indexProvider = StateProvider<int>((ref) => 0);
 
 class WelcomeScreen extends StatelessWidget {
   WelcomeScreen({super.key});
@@ -19,10 +18,11 @@ class WelcomeScreen extends StatelessWidget {
             return PageView(
               controller: _pageController,
               onPageChanged: (index) {
-                ref.read(indexProvider.notifier).state = index;
+                ref.read(indexDotProvider.notifier).changeIndex(index);
               },
               children: [
                 OnBoardingPage(
+                  context: context,
                   index: 0,
                   controller: _pageController,
                   title: 'Welcome to Eduflex',
@@ -31,6 +31,7 @@ class WelcomeScreen extends StatelessWidget {
                   buttonTitle: 'Get Started',
                 ),
                 OnBoardingPage(
+                  context: context,
                   index: 1,
                   controller: _pageController,
                   title: 'Connect With Everyone',
@@ -40,6 +41,7 @@ class WelcomeScreen extends StatelessWidget {
                   buttonTitle: 'Next',
                 ),
                 OnBoardingPage(
+                  context: context,
                   index: 2,
                   controller: _pageController,
                   title: 'Welcome',
@@ -51,7 +53,7 @@ class WelcomeScreen extends StatelessWidget {
             );
           }),
           Consumer(builder: (context, ref, child) {
-            final index = ref.watch(indexProvider);
+            final index = ref.watch(indexDotProvider);
             return Positioned(
               bottom: 50,
               child: DotsIndicator(

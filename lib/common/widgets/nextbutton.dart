@@ -4,13 +4,17 @@ Widget nextbutton({
   required String title,
   required int index,
   required PageController controller,
+  required BuildContext context,
 }) {
-  return InkWell(
+  return GestureDetector(
     onTap: () {
-      if (index < 3) {
+      if (index < 2) {
         controller.animateToPage(index + 1,
-            duration: const Duration(milliseconds: 500),
-            curve: Curves.linearToEaseOut);
+            duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
+      } else {
+        // Navigator.pushReplacement(context,
+        //     MaterialPageRoute(builder: (context) => const SignInPage()));
+        Navigator.pushNamed(context, '/SignIn');
       }
     },
     child: Container(

@@ -11,12 +11,14 @@ class OnBoardingPage extends StatelessWidget {
   final String subTitle;
   final int index;
   final double fontSize;
+  final BuildContext context;
   const OnBoardingPage(
       {super.key,
       required this.controller,
       required this.buttonTitle,
       required this.index,
       required this.title,
+      required this.context,
       this.imagePath = '',
       this.subTitle = '',
       this.fontSize = 26});
@@ -46,7 +48,12 @@ class OnBoardingPage extends StatelessWidget {
             text: subTitle,
           ),
         ),
-        nextbutton(index: index, controller: controller, title: buttonTitle),
+        nextbutton(
+          index: index,
+          controller: controller,
+          title: buttonTitle,
+          context: context,
+        ),
       ],
     );
   }

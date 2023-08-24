@@ -1,3 +1,4 @@
+import 'package:eduflex/pages/signin/widgets/signin_page.dart';
 import 'package:eduflex/pages/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,13 +20,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Eduflex',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: WelcomeScreen(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Eduflex',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => WelcomeScreen(),
+          '/SignIn': (context) => const SignInPage(),
+        });
   }
 }
