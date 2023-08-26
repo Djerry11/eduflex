@@ -1,14 +1,15 @@
 import 'package:eduflex/common/utils/colors.dart';
-import 'package:eduflex/common/widgets/appImage.dart';
+import 'package:eduflex/common/widgets/app_image.dart';
 import 'package:eduflex/common/widgets/textwidget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-AppBar buildAppBar() {
+AppBar buildAppBar({String title = 'Log In'}) {
   return AppBar(
     automaticallyImplyLeading: false,
     title: Center(
       child: textWidget(
-        text: 'Log In',
+        text: title,
         fontSize: 24,
         fontWeight: FontWeight.bold,
         color: AppColors.primaryText,
@@ -26,7 +27,7 @@ AppBar buildAppBar() {
 
 Widget thirdPartyLogin() {
   return Container(
-    padding: const EdgeInsets.only(top: 20),
+    padding: const EdgeInsets.only(top: 20, bottom: 20),
     margin: const EdgeInsets.symmetric(horizontal: 80),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -43,8 +44,8 @@ Widget _loginIcon(String imagePath) {
   return GestureDetector(
     onTap: () {},
     child: SizedBox(
-      width: 44,
-      height: 44,
+      width: 44.w,
+      height: 44.h,
       child: Image.asset(imagePath),
     ),
   );
@@ -52,7 +53,9 @@ Widget _loginIcon(String imagePath) {
 
 Widget appTextField(String title, String imagePath) {
   return Container(
-    margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    width: 499.w,
+    color: Colors.amberAccent,
+    height: 60.h,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -61,8 +64,6 @@ Widget appTextField(String title, String imagePath) {
           style: const TextStyle(color: AppColors.primaryThreeElementText),
         ),
         Container(
-          width: 320,
-          height: 50,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             border: Border.all(width: 1),
@@ -73,7 +74,7 @@ Widget appTextField(String title, String imagePath) {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                appImage(
+                appimage(
                   imagePath: imagePath,
                 ),
                 TextField(

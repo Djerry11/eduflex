@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "723482829758",
+    "project_id": "eduflex-1caf0",
+    "storage_bucket": "eduflex-1caf0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723482829758:android:363f0da2b486d5bc494fef",
+        "android_client_info": {
+          "package_name": "com.example.eduflex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723482829758-593geo30dgtunrspbs2urvii1bffvt2m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJgToBUZx730GqRMCTNbT_P2FhV14b-Yg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723482829758-593geo30dgtunrspbs2urvii1bffvt2m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

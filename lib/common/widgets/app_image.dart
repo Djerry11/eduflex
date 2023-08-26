@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget appImage(
+Widget appimage(
     {String imagePath = 'assets/icons/user.png',
     double width = 22,
     double height = 22}) {
